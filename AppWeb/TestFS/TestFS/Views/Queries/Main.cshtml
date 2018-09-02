@@ -1,0 +1,59 @@
+﻿@model TestFS.Models.clQuery
+
+<html>
+    <body>
+        <div class="container-custom">
+            <div class="row">
+                <div class="col">
+                    <table class="table-form">
+                        <tr>
+                            <td class="align-left">País</td>
+                        </tr>
+                        <tr>
+                            <td class="space">
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        @Html.DropDownList("country_1", null, "Seleccione", htmlAttributes: new { @class = "form-control custom-list" })
+                                        <input type="text" id="id-country" value="" hidden />
+                                        <button id="query-1" type="submit" f class="button-submit"><i class="fa fa-search"></i></button>
+                                    </div>
+                            </div>
+                            </td>
+                            <td>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="partial-query-1">
+                    @Html.Partial("_PeopleYear", Model.people_year)
+                </div>
+            </div>
+            <div class="col">
+                <div id="partial-query-all">
+                    @Html.Partial("_PeopleYear", Model.people_year_all)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="prev-query-1"><</button>
+                <button id="next-query-1">></button>
+                <input hidden id="query-1-count" type="number" value="@Model.page_1" />
+            </div>
+            <div class="col">
+                <button id="prev-query-all"><</button>
+                <button id="next-query-all">></button>
+                <input hidden id="query-all-count" type="number" value="@Model.page_2"/>
+            </div>
+        </div>
+    </body>
+</html>

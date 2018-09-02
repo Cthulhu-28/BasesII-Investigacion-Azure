@@ -1,0 +1,98 @@
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\ApplicationInsights.config
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\TestFS.dll.config
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\TestFS.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\TestFS.pdb
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Antlr3.Runtime.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.Web.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.ApplicationInsights.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Newtonsoft.Json.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Helpers.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Mvc.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Optimization.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Razor.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.WebPages.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.WebPages.Razor.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\WebGrease.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Helpers.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Mvc.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Optimization.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.Razor.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.WebPages.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\System.Web.WebPages.Razor.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Antlr3.Runtime.pdb
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Newtonsoft.Json.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.ApplicationInsights.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\Microsoft.AI.Web.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.Helpers.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.Mvc.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.Optimization.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.Razor.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.WebPages.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\obj\Debug\AppWeb.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\obj\Debug\AppWeb.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\obj\Debug\TestFS.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure\TestFS\TestFS\obj\Debug\TestFS.pdb
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\ApplicationInsights.config
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\TestFS.dll.config
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\TestFS.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\TestFS.pdb
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Antlr3.Runtime.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.Web.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.ApplicationInsights.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Newtonsoft.Json.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Helpers.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Mvc.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Optimization.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Razor.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.WebPages.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.WebPages.Razor.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\WebGrease.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Helpers.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Mvc.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Optimization.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.Razor.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.WebPages.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\System.Web.WebPages.Razor.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Antlr3.Runtime.pdb
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Newtonsoft.Json.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.ApplicationInsights.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\Microsoft.AI.Web.xml
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.Helpers.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.Mvc.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.Optimization.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.Razor.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.WebPages.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\obj\Debug\AppWeb.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\obj\Debug\AppWeb.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\obj\Debug\TestFS.dll
+C:\Users\admin\Documents\TEC\2018\II Semestre\Bases II\Proyectos\Investigacion Azure BDII\AppWeb\TestFS\TestFS\obj\Debug\TestFS.pdb

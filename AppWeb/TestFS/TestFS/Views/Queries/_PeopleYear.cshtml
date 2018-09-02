@@ -1,0 +1,28 @@
+﻿@model List<TestFS.Models.Country>
+
+<table class="table custom-table">
+    <thead>
+        <tr>
+            <th>
+                Año
+            </th>
+            <th>
+                Población
+            </th>
+        </tr>
+    </thead>
+    <tbody id="table_body">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.AREA.ToString("N0")
+                </td>
+                <td>
+                    @item.POPULATION.ToString("N0")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

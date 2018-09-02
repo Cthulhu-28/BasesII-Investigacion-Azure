@@ -1,0 +1,55 @@
+﻿@model List<TestFS.Models.Country>
+
+<table class="table custom-table">
+    <thead>
+        <tr>
+            <th>
+                País
+            </th>
+            <th>
+                Edad Promedio
+            </th>
+            <th>
+                Población
+            </th>
+        </tr>
+    </thead>
+    <tbody id="table_body">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.COUNTRYNAME
+                </td>
+                <td>
+                    @{
+                        String n;
+                        if (item.AREA == -1)
+                        {
+                            n = "-";
+                        }
+                        else
+                        {
+                            n = item.AREA.ToString("N0");
+                        }
+                    }
+                    @n
+                </td>
+                <td>
+                    @{
+                        String n1;
+                        if (item.POPULATION == -1)
+                        {
+                            n1 = "-";
+                        }
+                        else
+                        {
+                            n1 = item.POPULATION.ToString("N0");
+                        }
+                    }
+                    @n1
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>

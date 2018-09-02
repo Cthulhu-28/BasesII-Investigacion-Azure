@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="FindCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindCountryResult" type="tns:clCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clCountry">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="COUNTRYID" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COUNTRYNAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AREA" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="POPULATION" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FILEID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="FLAG" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANTHEM" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRESIDENT" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FLAGB64" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANTHEMB64" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="txn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClCountry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clCountry" nillable="true" type="tns:clCountry" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountriesResult" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="countries" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCountriesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="tns:clCountry" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCountryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="txn" type="tns:DbTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DbTransaction" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+      <s:element name="testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testResult" type="tns:DbTransaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountiesAt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountiesAtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountiesAtResult" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="tns:clCountry" />
+            <s:element minOccurs="1" maxOccurs="1" name="old_id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCountryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteCountryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clPerson">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDENTIFICATION" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BIRTH_COUNTRY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESIDENCE_COUNTRY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BIRTH_COUNTRY_ID" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESIDENCE_COUNTRY_ID" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BIRTH_DATE" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHOTO" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHOTOB64" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VIDEO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindPersonResult" type="tns:clPerson" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="person" type="tns:clPerson" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPersonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPeopleAt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="page_size" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clPerson" nillable="true" type="tns:clPerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPeopleAtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPeopleAtResult" type="tns:ArrayOfClPerson" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="person" type="tns:clPerson" />
+            <s:element minOccurs="1" maxOccurs="1" name="old_id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePersonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deletePersonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaisesLista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaisesListaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaisesListaResult" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RollBack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RollBackResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Commit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GET_COUNTRIES_INFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="size" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_COUNTRIES_INFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_COUNTRIES_INFOResult" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PEOPLE_YEAR_COUNTRY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="size" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PEOPLE_YEAR_COUNTRYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PEOPLE_YEAR_COUNTRYResult" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PEOPLE_YEAR_ALLCOUNTRIES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="size" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PEOPLE_YEAR_ALLCOUNTRIESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PEOPLE_YEAR_ALLCOUNTRIESResult" type="tns:ArrayOfClCountry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_page_country">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_page_countryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_page_countryResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_page_person">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tran" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_page_personResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_page_personResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Generate_People">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="countries" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="population" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Generate_PeopleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Generate_PeopleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="query_II">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ResultList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:ArrayOfResult" />
+          <s:element minOccurs="1" maxOccurs="1" name="max" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="min" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="tns:Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="count" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="countryid" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="query_IIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query_IIResult" type="tns:ResultList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FindCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:FindCountry" />
+  </wsdl:message>
+  <wsdl:message name="FindCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:FindCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCountries" />
+  </wsdl:message>
+  <wsdl:message name="AddCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:AddCountry" />
+  </wsdl:message>
+  <wsdl:message name="AddCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:AddCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountiesAtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountiesAt" />
+  </wsdl:message>
+  <wsdl:message name="GetCountiesAtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountiesAtResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCountry" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:deleteCountry" />
+  </wsdl:message>
+  <wsdl:message name="deleteCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:deleteCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:FindPerson" />
+  </wsdl:message>
+  <wsdl:message name="FindPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:FindPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPerson" />
+  </wsdl:message>
+  <wsdl:message name="AddPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPeopleAtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPeopleAt" />
+  </wsdl:message>
+  <wsdl:message name="GetPeopleAtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPeopleAtResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePerson" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonSoapIn">
+    <wsdl:part name="parameters" element="tns:deletePerson" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonSoapOut">
+    <wsdl:part name="parameters" element="tns:deletePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaisesListaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaisesLista" />
+  </wsdl:message>
+  <wsdl:message name="GetPaisesListaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaisesListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RollBackSoapIn">
+    <wsdl:part name="parameters" element="tns:RollBack" />
+  </wsdl:message>
+  <wsdl:message name="RollBackSoapOut">
+    <wsdl:part name="parameters" element="tns:RollBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitSoapIn">
+    <wsdl:part name="parameters" element="tns:Commit" />
+  </wsdl:message>
+  <wsdl:message name="CommitSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_COUNTRIES_INFOSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_COUNTRIES_INFO" />
+  </wsdl:message>
+  <wsdl:message name="GET_COUNTRIES_INFOSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_COUNTRIES_INFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="PEOPLE_YEAR_COUNTRYSoapIn">
+    <wsdl:part name="parameters" element="tns:PEOPLE_YEAR_COUNTRY" />
+  </wsdl:message>
+  <wsdl:message name="PEOPLE_YEAR_COUNTRYSoapOut">
+    <wsdl:part name="parameters" element="tns:PEOPLE_YEAR_COUNTRYResponse" />
+  </wsdl:message>
+  <wsdl:message name="PEOPLE_YEAR_ALLCOUNTRIESSoapIn">
+    <wsdl:part name="parameters" element="tns:PEOPLE_YEAR_ALLCOUNTRIES" />
+  </wsdl:message>
+  <wsdl:message name="PEOPLE_YEAR_ALLCOUNTRIESSoapOut">
+    <wsdl:part name="parameters" element="tns:PEOPLE_YEAR_ALLCOUNTRIESResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_page_countrySoapIn">
+    <wsdl:part name="parameters" element="tns:get_page_country" />
+  </wsdl:message>
+  <wsdl:message name="get_page_countrySoapOut">
+    <wsdl:part name="parameters" element="tns:get_page_countryResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_page_personSoapIn">
+    <wsdl:part name="parameters" element="tns:get_page_person" />
+  </wsdl:message>
+  <wsdl:message name="get_page_personSoapOut">
+    <wsdl:part name="parameters" element="tns:get_page_personResponse" />
+  </wsdl:message>
+  <wsdl:message name="Generate_PeopleSoapIn">
+    <wsdl:part name="parameters" element="tns:Generate_People" />
+  </wsdl:message>
+  <wsdl:message name="Generate_PeopleSoapOut">
+    <wsdl:part name="parameters" element="tns:Generate_PeopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="query_IISoapIn">
+    <wsdl:part name="parameters" element="tns:query_II" />
+  </wsdl:message>
+  <wsdl:message name="query_IISoapOut">
+    <wsdl:part name="parameters" element="tns:query_IIResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SolicitudSoap">
+    <wsdl:operation name="FindCountry">
+      <wsdl:input message="tns:FindCountrySoapIn" />
+      <wsdl:output message="tns:FindCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input message="tns:GetCountriesSoapIn" />
+      <wsdl:output message="tns:GetCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCountries">
+      <wsdl:input message="tns:AddCountriesSoapIn" />
+      <wsdl:output message="tns:AddCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCountry">
+      <wsdl:input message="tns:AddCountrySoapIn" />
+      <wsdl:output message="tns:AddCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountiesAt">
+      <wsdl:input message="tns:GetCountiesAtSoapIn" />
+      <wsdl:output message="tns:GetCountiesAtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <wsdl:input message="tns:UpdateCountrySoapIn" />
+      <wsdl:output message="tns:UpdateCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCountry">
+      <wsdl:input message="tns:deleteCountrySoapIn" />
+      <wsdl:output message="tns:deleteCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPerson">
+      <wsdl:input message="tns:FindPersonSoapIn" />
+      <wsdl:output message="tns:FindPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <wsdl:input message="tns:AddPersonSoapIn" />
+      <wsdl:output message="tns:AddPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleAt">
+      <wsdl:input message="tns:GetPeopleAtSoapIn" />
+      <wsdl:output message="tns:GetPeopleAtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input message="tns:UpdatePersonSoapIn" />
+      <wsdl:output message="tns:UpdatePersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <wsdl:input message="tns:deletePersonSoapIn" />
+      <wsdl:output message="tns:deletePersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaisesLista">
+      <wsdl:input message="tns:GetPaisesListaSoapIn" />
+      <wsdl:output message="tns:GetPaisesListaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RollBack">
+      <wsdl:input message="tns:RollBackSoapIn" />
+      <wsdl:output message="tns:RollBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Commit">
+      <wsdl:input message="tns:CommitSoapIn" />
+      <wsdl:output message="tns:CommitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_COUNTRIES_INFO">
+      <wsdl:input message="tns:GET_COUNTRIES_INFOSoapIn" />
+      <wsdl:output message="tns:GET_COUNTRIES_INFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PEOPLE_YEAR_COUNTRY">
+      <wsdl:input message="tns:PEOPLE_YEAR_COUNTRYSoapIn" />
+      <wsdl:output message="tns:PEOPLE_YEAR_COUNTRYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PEOPLE_YEAR_ALLCOUNTRIES">
+      <wsdl:input message="tns:PEOPLE_YEAR_ALLCOUNTRIESSoapIn" />
+      <wsdl:output message="tns:PEOPLE_YEAR_ALLCOUNTRIESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_page_country">
+      <wsdl:input message="tns:get_page_countrySoapIn" />
+      <wsdl:output message="tns:get_page_countrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_page_person">
+      <wsdl:input message="tns:get_page_personSoapIn" />
+      <wsdl:output message="tns:get_page_personSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Generate_People">
+      <wsdl:input message="tns:Generate_PeopleSoapIn" />
+      <wsdl:output message="tns:Generate_PeopleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="query_II">
+      <wsdl:input message="tns:query_IISoapIn" />
+      <wsdl:output message="tns:query_IISoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SolicitudSoap" type="tns:SolicitudSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindCountry">
+      <soap:operation soapAction="http://tempuri.org/FindCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://tempuri.org/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCountries">
+      <soap:operation soapAction="http://tempuri.org/AddCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCountry">
+      <soap:operation soapAction="http://tempuri.org/AddCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountiesAt">
+      <soap:operation soapAction="http://tempuri.org/GetCountiesAt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <soap:operation soapAction="http://tempuri.org/UpdateCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCountry">
+      <soap:operation soapAction="http://tempuri.org/deleteCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPerson">
+      <soap:operation soapAction="http://tempuri.org/FindPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <soap:operation soapAction="http://tempuri.org/AddPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleAt">
+      <soap:operation soapAction="http://tempuri.org/GetPeopleAt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <soap:operation soapAction="http://tempuri.org/UpdatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <soap:operation soapAction="http://tempuri.org/deletePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaisesLista">
+      <soap:operation soapAction="http://tempuri.org/GetPaisesLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RollBack">
+      <soap:operation soapAction="http://tempuri.org/RollBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Commit">
+      <soap:operation soapAction="http://tempuri.org/Commit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_COUNTRIES_INFO">
+      <soap:operation soapAction="http://tempuri.org/GET_COUNTRIES_INFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PEOPLE_YEAR_COUNTRY">
+      <soap:operation soapAction="http://tempuri.org/PEOPLE_YEAR_COUNTRY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PEOPLE_YEAR_ALLCOUNTRIES">
+      <soap:operation soapAction="http://tempuri.org/PEOPLE_YEAR_ALLCOUNTRIES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_page_country">
+      <soap:operation soapAction="http://tempuri.org/get_page_country" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_page_person">
+      <soap:operation soapAction="http://tempuri.org/get_page_person" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Generate_People">
+      <soap:operation soapAction="http://tempuri.org/Generate_People" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="query_II">
+      <soap:operation soapAction="http://tempuri.org/query_II" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolicitudSoap12" type="tns:SolicitudSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindCountry">
+      <soap12:operation soapAction="http://tempuri.org/FindCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap12:operation soapAction="http://tempuri.org/GetCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCountries">
+      <soap12:operation soapAction="http://tempuri.org/AddCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCountry">
+      <soap12:operation soapAction="http://tempuri.org/AddCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountiesAt">
+      <soap12:operation soapAction="http://tempuri.org/GetCountiesAt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCountry">
+      <soap12:operation soapAction="http://tempuri.org/deleteCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPerson">
+      <soap12:operation soapAction="http://tempuri.org/FindPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <soap12:operation soapAction="http://tempuri.org/AddPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleAt">
+      <soap12:operation soapAction="http://tempuri.org/GetPeopleAt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <soap12:operation soapAction="http://tempuri.org/deletePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaisesLista">
+      <soap12:operation soapAction="http://tempuri.org/GetPaisesLista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RollBack">
+      <soap12:operation soapAction="http://tempuri.org/RollBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Commit">
+      <soap12:operation soapAction="http://tempuri.org/Commit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_COUNTRIES_INFO">
+      <soap12:operation soapAction="http://tempuri.org/GET_COUNTRIES_INFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PEOPLE_YEAR_COUNTRY">
+      <soap12:operation soapAction="http://tempuri.org/PEOPLE_YEAR_COUNTRY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PEOPLE_YEAR_ALLCOUNTRIES">
+      <soap12:operation soapAction="http://tempuri.org/PEOPLE_YEAR_ALLCOUNTRIES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_page_country">
+      <soap12:operation soapAction="http://tempuri.org/get_page_country" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_page_person">
+      <soap12:operation soapAction="http://tempuri.org/get_page_person" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Generate_People">
+      <soap12:operation soapAction="http://tempuri.org/Generate_People" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="query_II">
+      <soap12:operation soapAction="http://tempuri.org/query_II" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Solicitud">
+    <wsdl:port name="SolicitudSoap" binding="tns:SolicitudSoap">
+      <soap:address location="http://localhost:57644/Solicitud.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolicitudSoap12" binding="tns:SolicitudSoap12">
+      <soap12:address location="http://localhost:57644/Solicitud.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

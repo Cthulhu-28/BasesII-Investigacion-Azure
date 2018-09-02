@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+<div id="FormContent">
+    <form id="jaja" method="post">
+        <table>
+            <tr>
+                <td name="campo">Valor</td>
+            </tr>
+        </table>
+        <button id="add" type="submit" formaction="/Country/Test" class="button-submit"><i class="fa fa-plus"></i>Agregar</button>
+    </form>
+    <div class="wrapper-2">
+        <img id="flag_photo" src="" alt="your image" class="img-fluid image-resize">
+        <button class="button-upload" id="get_file"><i class="fa fa-flag">Añade una bandera</i></button>
+        <input type="file" id="my_file" hidden />
+    </div>
+    
+</div>
+
+@section scripts{
+    <script>
+        document.getElementById('get_file').onclick = function () {
+            document.getElementById('my_file').click();
+        };
+
+        window.addEventListener('load', function () {
+            document.getElementById('my_file').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var img = document.getElementById('flag_photo');  // $('img')[0]
+                    img.src = URL.createObjectURL(this.files[0]); // set src to file url
+
+                } else {
+                    var img = document.getElementById('flag_photo');  // $('img')[0]
+                    img.src = '';
+                }
+            });
+        });
+    </script>
+}

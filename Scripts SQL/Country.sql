@@ -1,0 +1,17 @@
+
+
+CREATE TABLE [dbo].[COUNTRY](
+	[COUNTRYID] [numeric](10, 0) NOT NULL,
+	[COUNTRYNAME] [varchar](50) NOT NULL,
+	[AREA] [numeric](15, 5) NOT NULL,
+	[POPULATION] [numeric](15, 5) NOT NULL,
+	[FILEID] [uniqueidentifier] ROWGUIDCOL  NOT NULL CONSTRAINT [DF_COUNTRY_FILEID]  DEFAULT (newid()),
+	[FLAG] [varbinary](max)  NULL,
+	[ANTHEM] [varbinary](max)  NULL,
+	[PRESIDENT] [numeric](10, 0) NULL,
+	constraint COUNTRY_PK PRIMARY KEY(COUNTRYID),
+	CONSTRAINT FILEID_UNQ UNIQUE(FILEID)
+) ON [PRIMARY]
+GO
+
+

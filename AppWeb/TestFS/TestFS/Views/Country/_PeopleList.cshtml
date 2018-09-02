@@ -1,0 +1,49 @@
+﻿@model List<TestFS.Models.Person>
+
+<table class="table custom-table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                P. Nacimiento
+            </th>
+            <th>
+                P. Residencia
+            </th>
+            <th>
+                F. Nacimiento
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody id="table_body">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.NAME
+                </td>
+                <td>
+                    @item.BIRTH_COUNTRY
+                </td>
+                <td>
+                    @item.RESIDENCE_COUNTRY
+                </td>
+                <td>
+                    @*  @{ var img = "data:image/png;base64," + Convert.ToBase64String(item.BANDERA);}*@
+                    @*<img src='@img'>*@
+                    @item.BIRTH_DATE.ToShortDateString()
+                </td>
+                <td>
+                    <button class="edit3 edit-button-table" data-value="@item.IDENTIFICATION"><i class="fa fa-pencil"></i></button>
+                    <button class="delete3 edit-button-table" data-value="@item.IDENTIFICATION"><i class="fa fa-remove"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form method="post">
+</form>

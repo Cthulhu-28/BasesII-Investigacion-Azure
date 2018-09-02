@@ -1,0 +1,81 @@
+﻿@model TestFS.Models.ResultList
+<div class="div-q">
+    <table class="table custom-table">
+        @if (Model.list.Count > 0)
+        {
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    @for (int i = (int)Model.min; i <= (int)Model.max; i++)
+                    {
+                        <th class="rotate">
+                            @i
+                        </th>
+                    }
+                    <th class="rotate">
+                        Total
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @{
+                    var exit = true;
+                    while (exit)
+                    {
+                        <tr>
+                            @{
+                                var l = Model.getById(Model.list.First().countryid);
+                                int idx = 0;
+                                <td>
+                                    @Model.list.First().countryname
+                                </td>
+                                for (int i = (int)Model.min; i <= (int)Model.max + 1; i++)
+                                {
+                                    if (l.ElementAt(idx).year == i || i == Model.max + 1)
+                                    {
+                                        <td>
+                                            @l.ElementAt(idx).count
+                                        </td>
+                                        idx++;
+                                    }
+                                    else
+                                    {
+                                        <td>0</td>
+                                    }
+
+                                }
+                                Model.delete(Model.list.First().countryid);
+                                exit = Model.list.First().countryid != null;
+                            }
+                        </tr>
+                                }
+
+
+                                var idx2 = 1;
+
+                                <tr>
+                                    <td>Total</td>
+                                    @for (int i = (int)Model.min; i <= (int)Model.max + 1; i++)
+                                    {
+                                        if (Model.list.ElementAt(idx2).year == i || i == Model.max + 1)
+                                        {
+                                            <td>
+                                                @Model.list.ElementAt(idx2).count
+                                            </td>
+                                            idx2++;
+                                        }
+                                        else
+                                        {
+                                            <td>0</td>
+                                        }
+                                    }
+                                </tr>
+
+
+                }
+
+            </tbody>
+                                }
+    </table>
+</div>

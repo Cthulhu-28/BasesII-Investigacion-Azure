@@ -1,0 +1,25 @@
+﻿<html>
+    <body>
+        <br /><br />
+        <h2 class="text-center">Generar personas</h2>
+        <div id="loginform" class="d-flex justify-content-center align-items-center">
+
+
+                            
+                            <form name="frmInsertCountry" id="frmInsertCountry" method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Number of countries</label>
+                                    <input type="number" class="form-control custom-txt" id="countries" placeholder="Countries" name="countries" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">People per country</label>
+                                    <input type="number" class="form-control custom-txt" id="people" placeholder="People" name="people" max="100000" min="0" required>
+                                </div>
+
+                                <button type="submit" class="button-submit-2" formaction="/Country/Generate">Generar</button>
+                            </form>
+
+                    
+        </div>
+    </body>
+</html>

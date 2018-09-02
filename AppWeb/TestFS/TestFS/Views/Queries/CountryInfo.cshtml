@@ -1,0 +1,15 @@
+﻿@model List<TestFS.Models.Country>
+
+<html>
+    <body>
+        <div class="container-custom">
+           
+                    <div id="div-info">
+                        @Html.Partial("_CountryInfo", Model)
+                    </div>
+            <button id="prev-info"><i class="fa fa-chevron-left"></i></button>
+            <button id="next-info"><i class="fa fa-chevron-right"></i></button>
+            <input hidden id="info-count" type="number" value="1" />
+        </div>
+    </body>
+</html>

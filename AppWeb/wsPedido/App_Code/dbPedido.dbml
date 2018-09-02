@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WorldDB" EntityNamespace="enWorld" ContextNamespace="cnWorld" Class="dbWorldDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ADMIN-PC;Initial Catalog=WorldDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WorldDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.producto" Member="productos">
+    <Type Name="producto">
+      <Column Name="noProducto" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nbrProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="producto_lineaSolicitud" Member="lineaSolicituds" ThisKey="noProducto" OtherKey="noProducto" Type="lineaSolicitud" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lineaSolicitud" Member="lineaSolicituds">
+    <Type Name="lineaSolicitud">
+      <Column Name="noSolicitud" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="noProducto" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="monto" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+      <Association Name="producto_lineaSolicitud" Member="producto" ThisKey="noProducto" OtherKey="noProducto" Type="producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COUNTRY" Member="COUNTRies">
+    <Type Name="COUNTRY">
+      <Column Name="COUNTRYID" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COUNTRYNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Decimal" DbType="Decimal(15,5) NOT NULL" CanBeNull="false" />
+      <Column Name="POPULATION" Type="System.Decimal" DbType="Decimal(15,5) NOT NULL" CanBeNull="false" />
+      <Column Name="FILEID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FLAG" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANTHEM" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PRESIDENT" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Association Name="COUNTRY_PERSON" Member="PERSONs" ThisKey="COUNTRYID" OtherKey="BIRTH_COUNTRY" Type="PERSON" />
+      <Association Name="COUNTRY_PERSON1" Member="PERSONs1" ThisKey="COUNTRYID" OtherKey="RESIDENCE_COUNTRY" Type="PERSON" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSON" Member="PERSONs">
+    <Type Name="PERSON">
+      <Column Name="IDENTIFICATION" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_COUNTRY" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RESIDENCE_COUNTRY" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FILEID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PHOTO" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="VIDEO" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Association Name="COUNTRY_PERSON" Member="COUNTRY" ThisKey="BIRTH_COUNTRY" OtherKey="COUNTRYID" Type="COUNTRY" IsForeignKey="true" />
+      <Association Name="COUNTRY_PERSON1" Member="COUNTRY1" ThisKey="RESIDENCE_COUNTRY" OtherKey="COUNTRYID" Type="COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SELECT_PIECE" Method="SELECT_PIECE">
+    <Parameter Name="n_page" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <ElementType Name="SELECT_PIECEResult">
+      <Column Name="COUNTRYID" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTRYNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.Decimal" DbType="Decimal(15,5) NOT NULL" CanBeNull="false" />
+      <Column Name="POPULATION" Type="System.Decimal" DbType="Decimal(15,5) NOT NULL" CanBeNull="false" />
+      <Column Name="PRESIDENT" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SELECT_PIECE_PERSON" Method="SELECT_PIECE_PERSON">
+    <Parameter Name="n_page" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <Parameter Name="page_size" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <ElementType Name="SELECT_PIECE_PERSONResult">
+      <Column Name="BIRTH_COUNTRY" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="BNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IDENTIFICATION" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RESIDENCE_COUNTRY" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.COUNTRY_INFO" Method="COUNTRY_INFO">
+    <Parameter Name="page" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="size" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="COUNTRY_INFOResult">
+      <Column Name="COUNTRYID" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="COUNTRYNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POPULATION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PEOPLE_YEAR_COUNTRY" Method="PEOPLE_YEAR_COUNTRY">
+    <Parameter Name="id" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <Parameter Name="page" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="size" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="PEOPLE_YEAR_COUNTRYResult">
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BORN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PEOPLE_YEAR_ALL_COUNTRIES" Method="PEOPLE_YEAR_ALL_COUNTRIES">
+    <Parameter Name="page" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="size" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="PEOPLE_YEAR_ALL_COUNTRIESResult">
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BORN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GENERATE_PEOPLE_fast" Method="GENERATE_PEOPLE_fast">
+    <Parameter Name="countries" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <Parameter Name="population" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GET_PAGE_COUNTRY" Method="GET_PAGE_COUNTRY">
+    <Parameter Name="page" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GET_PAGE_COUNTRYResult">
+      <Column Name="N" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_PAGE_PERSON" Method="GET_PAGE_PERSON">
+    <Parameter Name="page" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GET_PAGE_PERSONResult">
+      <Column Name="N" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.QUERY_II" Method="QUERY_II">
+    <ElementType Name="QUERY_IIResult">
+      <Column Name="COUNTRYID" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="COUNTRYNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MAX_DATES" Method="MAX_DATES">
+    <ElementType Name="MAX_DATESResult">
+      <Column Name="maxi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mini" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

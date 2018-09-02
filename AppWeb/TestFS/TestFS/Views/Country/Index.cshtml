@@ -1,0 +1,223 @@
+﻿
+@model TestFS.Models.clCountry
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+    <head>
+        <script>
+        </script>
+        
+    </head>
+    <body>
+        <div class="container-custom">
+            <div id="progress-bar" class="progress-custom"></div>
+            <div class="row">
+                <div class="col">
+                    <form name="frmInsertCountry" id="frmInsertCountry" method="post" enctype="multipart/form-data">
+                        <table class="table-form">
+                            <tr>
+                                <td></td>
+                                <td class="align-left" colspan="2">País</td>
+                                <td class="align-left">Área</td>
+                                <td class="align-left">Población</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">
+                                    <div class="wrapper-2">
+                                        <img id="flag_photo" src="" alt="your image" class="img-fluid image-resize">
+                                        <button class="button-upload" id="get_flag_file"><i class="fa fa-flag"></i><span>Add a flag</span></button>
+                                        <input type="file" id="flag_file" name="flag_file" hidden />
+                                    </div>
+                                </td>
+
+                                <td class="space" colspan="2">
+                                    <input type="text" name="country" class="form-control custom-txt" id="country" value="" required placeholder="País" />
+                                </td>
+                                <td class="space">
+                                    <input type="number" name="area" class="form-control custom-txt" id="area" value="" required placeholder="Área" />
+                                </td>
+                                <td class="space">
+                                    <input type="number" name="population" class="form-control custom-txt" id="population" value="" required placeholder="Población" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left">Id</td>
+                                <td class="align-left">Presidente</td>
+                                <td class="align-left">Himno</td>
+                                <td class="align-left">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="space">
+                                    <input type="text" name="countryid" class="form-control custom-txt" id="countryid" value="" required placeholder="Id" />
+                                    <input type="text" name="old_id" class="form-control custom-txt" id="old_id" value="" hidden/>
+                                </td>
+                                <td class="space">
+                                    <input type="number" name="president" class="form-control custom-txt" value="" id="president" placeholder="Presidente" />
+                                    <input id="index" name="index" hidden value="1" />
+                                </td>
+                                <td>
+                                    <audio controls="controls" class="custom-audio" src="" id="player" hidden></audio>
+                                    <input type="file" id="anthem_file" name="anthem_file" hidden />
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button id="get_anthem_file" class="anthem-button"><i class="fa fa-music"></i></button>
+                                            <button id="play" onclick="document.getElementById('player').play()" class="button-control corner"><i class="fa fa-play"></i></button>
+                                            <button id="pause" onclick="document.getElementById('player').pause()" class="button-control corner"><i class="fa fa-pause"></i></button>
+                                        </div>
+                                        <span id="FileName" class="info-div">No seleccionado</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="edit-country-div" style="display:none">
+                                        <div class="row">
+
+                                            <div class="col">
+                                                <button id="edit" type="submit" f class="button-submit" formaction="/Country/EditCountry"><i class="fa fa-pencil"></i></button>
+                                            </div>
+                                            <div class="col">
+                                                <button id="cancel" type="submit" f class="button-submit"><i class="fa fa-remove"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="add-country-div">
+                                        <button id="add" type="submit" formaction="/Country/InsertCountry" class="button-submit"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr></tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="col">
+                    <form name="frmInsertPerson" id="frmInsertPerson" method="post" enctype="multipart/form-data">
+                        <table class="table-form">
+                            <tr>
+                                <td></td>
+                                <td class="align-left">Nombre</td>
+                                <td class="align-left">P. Nacimiento</td>
+                                <td class="align-left">P. Residencia</td>
+                                <td class="align-left">Video<button id="play-video" class="button-control corner-2"><i class="fa fa-play"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">
+                                    <div class="wrapper-2 wrapper-3">
+                                        <img id="person_photo" src="" alt="your image" class="img-fluid image-resize-2">
+                                        <button class="button-upload" id="get_person_file"><i class="fa fa-camera"></i><span>Foto</span></button>
+                                        <input type="file" id="person_file" name="person_file" hidden value=""/>
+                                    </div>
+                                </td>
+                                <td class="space">
+                                    <input type="text" name="person_name" class="form-control custom-txt" id="person_name" value="" required placeholder="Nombre"  autocomplete="off" />
+                                </td>
+                                <td class="space">
+                                   @Html.DropDownList("birth_list", null, "Seleccione", htmlAttributes: new { @class = "form-control custom-list" })
+                                </td>
+                                <td class="space">
+                                    @Html.DropDownList("residence_list", null, "Seleccione", htmlAttributes: new { @class = "form-control custom-list" })
+                                </td>
+                                <td class="space">
+                                    <div id="video_div"></div>
+                                    <input type="text" name="video" class="form-control custom-txt" id="video" value="" required placeholder="video" hidden />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left">ID</td>
+                                <td class="align-left">F. Nacimiento</td>
+                                <td class="align-left">Email</td>
+                                <td class="align-left"></td>
+                            </tr>
+                            <tr>
+                                <td class="space">
+                                    <input type="text" name="identification" class="form-control custom-txt" id="identification" value="" required placeholder="ID"  autocomplete="off"/>
+                                    <input type="text" name="old_id_person" class="form-control custom-txt" id="old_id_person" value="" hidden />
+                                </td>
+                                <td class="space">
+                                    <input type="text" name="birth_date" class="form-control custom-txt" id="birth_date" value="" required placeholder="Fecha"  autocomplete="off"/>
+                                </td>
+                                <td class="space">
+                                    <input type="text" name="email" class="form-control custom-txt" id="email" value="" required placeholder="Email"  autocomplete="off"/>
+                                </td>
+                                <td class="space">
+                                    <div id="edit-person-div" style="display:none">
+                                        <div class="row">
+                                            <div class="col">
+                                                <button id="edit-person" type="submit" f class="button-submit" formaction="/Country/EditPerson"><i class="fa fa-pencil"></i></button>
+                                                <button id="cancel-person" type="submit" f class="button-submit"><i class="fa fa-remove"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="add-person-div">
+                                        <button id="add-person" type="submit" f class="button-submit" formaction="/Country/InsertPerson"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="partial-country">
+                    @Html.Partial("_PaisList", Model.loaded)
+                </div>
+            </div>
+            <div class="col">
+                <div id="partial-person">
+                    @Html.Partial("_PeopleList", Model.people_loaded)
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <button id="first-country">Primero</button>
+                <button id="prev-country"><i class="fa fa-chevron-left"></i></button>
+                <button id="next-country"><i class="fa fa-chevron-right"></i></button>
+                <button id="last-country">Último</button>
+                 @Html.ActionLink("commmit", "commit", "Country")
+                 @Html.ActionLink("rollback", "rollback", "Country")
+                <input hidden id="next-country-count" type="number" value="@Model.page"/>
+            </div>
+            <div class="col">
+                <button id="first-person">Primero</button>
+                <button id="prev-person"><i class="fa fa-chevron-left"></i></button>
+                <button id="next-person"><i class="fa fa-chevron-right"></i></button>
+                <button id="last-person">Último</button>
+                <input hidden id="next-person-count" type="number" value="@Model.p_page" />
+            </div>
+        </div>
+    </body>
+</html>
+
+@section Scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            
+        });
+        
+        //function clearFileInput(id) {
+        //    var oldInput = document.getElementById(id);
+
+        //    var newInput = document.createElement("input");
+
+        //    newInput.type = "file";
+        //    newInput.id = oldInput.id;
+        //    newInput.name = oldInput.name;
+        //    newInput.className = oldInput.className;
+        //    newInput.style.cssText = oldInput.style.cssText;
+        //    newInput.name = oldInput.name;
+        //    newInput.required = false;
+     
+
+        //    oldInput.parentNode.replaceChild(newInput, oldInput);
+        //}
+
+    </script>
+
+}

@@ -1,0 +1,56 @@
+﻿@model List<TestFS.Models.Country>
+
+<table class="table custom-table">
+    <thead>
+        <tr>
+            <th>
+                País
+            </th>
+            <th>
+                Área
+            </th>
+            <th>
+                Población
+            </th>
+            <th>
+                Presidente
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody id="table_body">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.COUNTRYNAME
+                </td>
+                <td>
+                    @item.AREA.ToString("N0")
+                </td>
+                <td>
+                    @item.POPULATION.ToString("N0")
+                </td>
+                <td>
+                    @*  @{ var img = "data:image/png;base64," + Convert.ToBase64String(item.BANDERA);}*@
+                    @*<img src='@img'>*@
+                    @item.PRESIDENT
+                </td>
+                <td>
+                    <button class="edit2 edit-button-table" data-value="@item.COUNTRYID"><i class="fa fa-pencil"></i></button>
+                    <button class="delete2 edit-button-table" data-value="@item.COUNTRYID"><i class="fa fa-remove"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form method="post">
+    <div id="temp-data" style="display:none">
+
+        
+    </div>
+    <div id="bar-confirm" style="display:none">
+        <button id="confirm" formaction="/Country/InsertCountry">Confirmar</button>
+    </div>
+</form>
